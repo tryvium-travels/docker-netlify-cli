@@ -1,0 +1,84 @@
+name: Kaniko Build / Push to Dockerhub
+on: push
+jobs:
+  latest: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: latest
+  node-15: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 15-alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: node-${{ env.NODE_VERSION }}
+  node-14: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 14-alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: node-${{ env.NODE_VERSION }}
+  node-12: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 12-alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: node-${{ env.NODE_VERSION }}
+  node-10: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 10-alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: node-${{ env.NODE_VERSION }}
+  
