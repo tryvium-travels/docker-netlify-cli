@@ -1,6 +1,8 @@
 <p align="center"><img src="https://res.cloudinary.com/tryvium/image/upload/v1551645701/company/logo-circle.png"/></p>
 
 # Netlify CLI in Docker - The Tryvium Company LTD
+![Dockerhub Name](https://img.shields.io/badge/dockerhub-tryvium%2Fnetlify--cli-blue)
+![Dockerhub Pulls](https://img.shields.io/docker/pulls/tryvium/netlify-cli.svg)
 
 The netlify-cli package available as a Docker Image
 
