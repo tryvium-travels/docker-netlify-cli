@@ -17,6 +17,22 @@ jobs:
           cache: true
           cache_registry: tryvium/netlify-cli-cache
           tag: latest
+  node-16: 
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 16-alpine
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: tryvium/netlify-cli
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          extra_args: --build-arg NODE_VERSION=${{ env.NODE_VERSION}} --build-arg NETLIFY_CLI_VERSION=latest
+          cache: true
+          cache_registry: tryvium/netlify-cli-cache
+          tag: node-${{ env.NODE_VERSION }}
   node-15: 
     runs-on: ubuntu-latest
     env:
