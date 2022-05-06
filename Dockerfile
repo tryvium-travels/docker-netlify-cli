@@ -1,4 +1,5 @@
 ARG NODE_VERSION="alpine"
+ARG NETLIFY_CLI_VERSION="latest"
 
 FROM node:$NODE_VERSION as builder
 
@@ -15,13 +16,16 @@ LABEL org.opencontainers.image.documentation="https://github.com/tryvium-travels
 
 ENV NETLIFY_AUTH_TOKEN=""
 
+# bash is needed by netlify cli in build scripts
+RUN apk add --no-cache bash
+
 RUN wget https://gobinaries.com/tj/node-prune && chmod a+x node-prune && ./node-prune
 RUN yarn config set global-folder "/global/"
 RUN yarn config set cache-folder "/tmp/yarn-cache"
 RUN yarn global add \
       --no-lockfile \
       --non-interactive \
-      netlify-cli
+      "netlify-cli@$NETLIFY_CLI_VERSION"
 RUN yarn cache clean --all
 RUN node-prune /global
 RUN rm -rf node-prune $(which node-prune) /tmp/*
