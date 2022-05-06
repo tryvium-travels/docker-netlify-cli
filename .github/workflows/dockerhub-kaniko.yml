@@ -29,9 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14, 16, 17, 18]
+        node-version: [14, 16, 18]
+        distro: ["", "-alpine"]
     env:
-      NODE_VERSION: "${{ matrix.node-version }}-alpine"
+      NODE_VERSION: "${{ matrix.node-version }}${{ matrix.distro }}"
     steps:
       - uses: actions/checkout@master
       - name: Kaniko build

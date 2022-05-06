@@ -1,4 +1,4 @@
-ARG NODE_VERSION="alpine"
+ARG NODE_VERSION="latest"
 ARG NETLIFY_CLI_VERSION="latest"
 
 FROM node:$NODE_VERSION as builder
@@ -15,9 +15,6 @@ LABEL org.opencontainers.image.description="The netlify-cli package available as
 LABEL org.opencontainers.image.documentation="https://github.com/tryvium-travels/docker-netlify-cli"
 
 ENV NETLIFY_AUTH_TOKEN=""
-
-# bash is needed by netlify cli in build scripts
-RUN apk add --no-cache bash
 
 RUN wget https://gobinaries.com/tj/node-prune && chmod a+x node-prune && ./node-prune
 RUN yarn config set global-folder "/global/"
