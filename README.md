@@ -3,6 +3,7 @@
 # Netlify CLI in Docker - The Tryvium Company LTD
 ![Dockerhub Name](https://img.shields.io/badge/dockerhub-tryvium%2Fnetlify--cli-blue)
 ![Dockerhub Pulls](https://img.shields.io/docker/pulls/tryvium/netlify-cli.svg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli?ref=badge_shield)
 
 The netlify-cli package available as a Docker Image
 
@@ -45,3 +46,7 @@ Deploy to netlify:
   script: 
     - netlify -h
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli?ref=badge_large)
