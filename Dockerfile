@@ -6,7 +6,7 @@ FROM node:$NODE_VERSION as builder
 LABEL MAINTAINER="Alessandro Sanino <a.sanino@tryvium.io>"
 
 # Opencontainers Metadata
-LABEL org.opencontainers.image.authors="The Tryvium Company LTD - Alessandro Sanino <a.sanino@tryvium.io>"
+LABEL org.opencontainers.image.authors="Tryvium Travels LTD - Alessandro Sanino <a.sanino@tryvium.io>"
 LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/tryvium/netlify-cli"
 LABEL org.opencontainers.image.source="https://github.com/tryvium-travels/docker-netlify-cli"
 LABEL org.opencontainers.image.licenses="MIT"
