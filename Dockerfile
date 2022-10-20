@@ -24,7 +24,5 @@ RUN yarn global add \
       --non-interactive \
       "netlify-cli@$NETLIFY_CLI_VERSION"
 RUN yarn cache clean --all
-RUN node-prune /global
-RUN rm -rf node-prune $(which node-prune) /tmp/*
 
 ENTRYPOINT netlify
