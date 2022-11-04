@@ -1,6 +1,6 @@
-<p align="center"><img src="https://res.cloudinary.com/tryvium/image/upload/v1551645701/company/logo-circle.png"/></p>
+![docker-netlify-cli logo](assets/logo.png)
 
-# Netlify CLI in Docker - The Tryvium Company LTD
+# Netlify CLI in Docker
 ![Dockerhub Name](https://img.shields.io/badge/dockerhub-tryvium%2Fnetlify--cli-blue)
 ![Dockerhub Pulls](https://img.shields.io/docker/pulls/tryvium/netlify-cli.svg)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftryvium-travels%2Fdocker-netlify-cli?ref=badge_shield)
