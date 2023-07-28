@@ -1,4 +1,4 @@
-ARG NODE_VERSION="latest"
+ARG NODE_VERSION="alpine"
 ARG NETLIFY_CLI_VERSION="latest"
 
 FROM node:$NODE_VERSION as builder
@@ -16,13 +16,18 @@ LABEL org.opencontainers.image.documentation="https://github.com/tryvium-travels
 
 ENV NETLIFY_AUTH_TOKEN=""
 
-RUN wget https://gobinaries.com/tj/node-prune && chmod a+x node-prune && ./node-prune
 RUN yarn config set global-folder "/global/"
 RUN yarn config set cache-folder "/tmp/yarn-cache"
 RUN yarn global add \
-      --no-lockfile \
+      --non-interactive \
+      node-gyp
+RUN yarn global add \
       --non-interactive \
       "netlify-cli@$NETLIFY_CLI_VERSION"
 RUN yarn cache clean --all
+RUN wget https://gobinaries.com/tj/node-prune && \
+    chmod a+x node-prune && \
+    ./node-prune && \
+    rm node-prune
 
 ENTRYPOINT netlify

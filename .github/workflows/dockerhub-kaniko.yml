@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14, 16, 18]
+        node-version: [16, 18, 20]
         distro: ["", "-alpine"]
     env:
       NODE_VERSION: "${{ matrix.node-version }}${{ matrix.distro }}"
